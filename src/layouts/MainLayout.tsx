@@ -1,16 +1,35 @@
+import { Box } from '@mui/material';
 import React, { ReactNode } from 'react';
+import { Helmet } from 'react-helmet';
+
+interface MetaItem {
+  title: string;
+  content: string;
+}
 
 interface Props {
   children: ReactNode;
+  title: string;
+  meta?: MetaItem[];
 }
 
+const prefixTitle = 'Google Fonts';
+
 export default function MainLayout(props: Props) {
-  const { children } = props;
+  const { children, meta, title } = props;
+
+  const onMapperTitle = () => {
+    return title + ' - ' + prefixTitle;
+  };
+
   return (
-    <div className="wrapper d-flex align-items-stretch">
-      <main className="flex-grow-1 mw-100 overflow-auto min-vh-100">
-        <div className="content mt-3 p-3">{children}</div>
-      </main>
-    </div>
+    <Box>
+      <Helmet
+        title={onMapperTitle()}
+        htmlAttributes={{ lang: 'en' }}
+        meta={meta}
+      />
+      <main>{children}</main>
+    </Box>
   );
 }

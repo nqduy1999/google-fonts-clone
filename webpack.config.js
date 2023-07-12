@@ -126,8 +126,16 @@ module.exports = async (env, agrv) => {
     devServer: {
       static: path.resolve(__dirname, 'public'),
       port: 3000,
-      open: true,
-      hot: true
+      historyApiFallback: true,
+      allowedHosts: 'all',
+      client: {
+        webSocketURL: {
+          hostname: 'localhost',
+          pathname: '/ws',
+          port: 3000,
+          protocol: 'ws'
+        }
+      }
     },
     plugins: isDev ? basePlugins : prodPlugins,
     performance: {

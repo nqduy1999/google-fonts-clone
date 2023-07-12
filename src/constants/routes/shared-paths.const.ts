@@ -5,9 +5,6 @@ export class SharedPaths {
   static get SNIPER_ROUTE() {
     return '/sniper';
   }
-  static get EXCHANGE_ROUTE() {
-    return '/exchange';
-  }
   static get NOT_FOUND_ERROR_ROUTE() {
     return '/404';
   }
