@@ -125,7 +125,7 @@ module.exports = async (env, agrv) => {
     devtool: isDev ? 'source-map' : false,
     devServer: {
       static: path.resolve(__dirname, 'public'),
-      port: 9999,
+      port: 3000,
       open: true,
       hot: true
     },

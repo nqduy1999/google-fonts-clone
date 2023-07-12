@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from 'react-redux';
-import { store } from './store/store';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { generalTheme } from './theme/general-theme';
 import { QueryClientProvider } from './providers/query-client-provider';
@@ -16,9 +14,7 @@ root.render(
       <ErrorBoundary>
         <QueryClientProvider>
           <CssBaseline />
-          <Provider store={store}>
-            <App />
-          </Provider>
+          <App />
         </QueryClientProvider>
       </ErrorBoundary>
     </ThemeProvider>
