@@ -1,9 +1,8 @@
-/* eslint-disable no-console */
 import { Grid } from '@mui/material';
 import React from 'react';
-import { GridSystemProps } from './grid-system.type';
+import { GridSystemProps } from './interface';
 
-export const GridSystem: React.FC<GridSystemProps> = ({
+const GridSystem: React.FC<GridSystemProps> = ({
   dataSource,
   container = true,
   direction,
@@ -19,3 +18,5 @@ export const GridSystem: React.FC<GridSystemProps> = ({
     </Grid>
   );
 };
+
+export default GridSystem;

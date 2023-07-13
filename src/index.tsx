@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { CssBaseline, ThemeProvider } from '@mui/material';
 import { generalTheme } from './theme/general-theme';
 import { QueryClientProvider } from './providers/query-client-provider';
-import { ErrorBoundary } from './components/atom/error-boundary/error-boundary.comp';
+import { ErrorBoundary } from './components';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,7 +18,7 @@ root.render(
         </QueryClientProvider>
       </ErrorBoundary>
     </ThemeProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
 
 // If you want your app to work offline and load faster, you can change

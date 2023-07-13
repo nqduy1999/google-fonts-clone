@@ -3,7 +3,7 @@ export class SharedPaths {
     return '/';
   }
   static get SNIPER_ROUTE() {
-    return '/sniper';
+    return '/specimen/:name';
   }
   static get NOT_FOUND_ERROR_ROUTE() {
     return '/404';

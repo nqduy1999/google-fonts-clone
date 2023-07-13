@@ -2,7 +2,7 @@ import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import React from 'react';
 
-export const Loader = ({ spinning = true }) => {
+const Loader = ({ spinning = true }) => {
   if (!spinning) return null;
   return (
     <Box position="relative" height="100%">
@@ -23,3 +23,5 @@ export const Loader = ({ spinning = true }) => {
     </Box>
   );
 };
+
+export default Loader;

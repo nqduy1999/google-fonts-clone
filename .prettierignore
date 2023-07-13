@@ -1,2 +1,9 @@
-.cache
-package-lock.json
+node_modules/
+build
+config
+dist/
+.prettierrc.js
+www/*
+public/*
+assets-src/*
+docs/*

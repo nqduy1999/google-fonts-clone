@@ -1,4 +1,3 @@
-/* eslint-disable no-useless-escape */
 export const isScreensize = size => {
   let _isTrue = false;
   switch (size) {

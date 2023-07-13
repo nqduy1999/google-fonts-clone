@@ -25,33 +25,33 @@ module.exports = async (env, agrv) => {
   const isAnalyze = env && env.analyze;
   const dirs = await handleDir();
   const copyPluginPatterns = dirs
-    .filter(dir => dir !== 'index.html')
-    .map(dir => {
+    .filter((dir) => dir !== 'index.html')
+    .map((dir) => {
       return {
         from: dir,
         to: '',
-        context: path.resolve('public')
+        context: path.resolve('public'),
       };
     });
   const basePlugins = [
     new Dotenv(),
     new HtmlWebpackPlugin({
-      template: 'public/index.html'
+      template: 'public/index.html',
     }),
     new CopyPlugin({
-      patterns: copyPluginPatterns
+      patterns: copyPluginPatterns,
     }),
     new MiniCssExtractPlugin({
-      filename: isDev ? '[name].css' : 'static/css/[name].[contenthash:6].css'
+      filename: isDev ? '[name].css' : 'static/css/[name].[contenthash:6].css',
     }),
-    new webpack.ProgressPlugin()
+    new webpack.ProgressPlugin(),
   ];
   let prodPlugins = [
     ...basePlugins,
     new CleanWebpackPlugin(),
     new CompressionPlugin({
-      test: /\.(css|js|html|svg)$/
-    })
+      test: /\.(css|js|html|svg)$/,
+    }),
   ];
   if (isAnalyze) {
     prodPlugins = [...prodPlugins, new BundleAnalyzerPlugin()];
@@ -62,8 +62,8 @@ module.exports = async (env, agrv) => {
       rules: [
         {
           test: /\.(ts|tsx)$/,
-          use: ['ts-loader', 'eslint-loader'],
-          exclude: /node_modules/
+          use: ['ts-loader'],
+          exclude: /node_modules/,
         },
         {
           test: /\.(s[ac]ss|css)$/,
@@ -71,9 +71,9 @@ module.exports = async (env, agrv) => {
             MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
-              options: { sourceMap: isDev ? true : false }
-            }
-          ]
+              options: { sourceMap: isDev ? true : false },
+            },
+          ],
         },
         {
           test: /\.(eot|ttf|woff|woff2)$/,
@@ -81,10 +81,12 @@ module.exports = async (env, agrv) => {
             {
               loader: 'file-loader',
               options: {
-                name: isDev ? '[path][name].[ext]' : 'static/fonts/[name].[ext]'
-              }
-            }
-          ]
+                name: isDev
+                  ? '[path][name].[ext]'
+                  : 'static/fonts/[name].[ext]',
+              },
+            },
+          ],
         },
         {
           test: /\.(png|svg|jpg|gif)$/,
@@ -94,19 +96,19 @@ module.exports = async (env, agrv) => {
               options: {
                 name: isDev
                   ? '[path][name].[ext]'
-                  : 'static/media/[name].[contenthash:6].[ext]'
-              }
-            }
-          ]
-        }
-      ]
+                  : 'static/media/[name].[contenthash:6].[ext]',
+              },
+            },
+          ],
+        },
+      ],
     },
     resolve: {
       extensions: ['.tsx', '.ts', '.jsx', '.js'],
       alias: {
         '@': path.resolve('src'),
-        '@@': path.resolve()
-      }
+        '@@': path.resolve(),
+      },
     },
     output: {
       path: path.resolve('build'),
@@ -119,8 +121,8 @@ module.exports = async (env, agrv) => {
         destructuring: false,
         dynamicImport: false,
         forOf: false,
-        module: false
-      }
+        module: false,
+      },
     },
     devtool: isDev ? 'source-map' : false,
     devServer: {
@@ -133,13 +135,13 @@ module.exports = async (env, agrv) => {
           hostname: 'localhost',
           pathname: '/ws',
           port: 3000,
-          protocol: 'ws'
-        }
-      }
+          protocol: 'ws',
+        },
+      },
     },
     plugins: isDev ? basePlugins : prodPlugins,
     performance: {
-      maxEntrypointSize: 800000 //  Khi có 1 file build vượt quá giới hạn này (tính bằng byte) thì sẽ bị warning trên terminal.
-    }
+      maxEntrypointSize: 800000, //  Khi có 1 file build vượt quá giới hạn này (tính bằng byte) thì sẽ bị warning trên terminal.
+    },
   };
 };

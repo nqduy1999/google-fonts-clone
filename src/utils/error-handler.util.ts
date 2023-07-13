@@ -1,11 +1,10 @@
-/* eslint-disable no-console */
 import { log } from './logger.util';
 
 import React from 'react';
 import { API_ERRORS } from '@/constants/error/api-error-const';
 
 export const useErrorHandler = () => {
-  const onError = React.useCallback(error => {
+  const onError = React.useCallback((error) => {
     if (error instanceof Error && error.message === '401') {
       console.log('error from client');
       return;
@@ -25,7 +24,7 @@ export const useErrorHandler = () => {
 };
 
 export const useAsyncErrorHandler = () => {
-  return React.useCallback(async asyncFunc => {
+  return React.useCallback(async (asyncFunc) => {
     try {
       return await asyncFunc();
     } catch (error) {
@@ -39,10 +38,10 @@ export const useAsyncErrorHandler = () => {
   }, []);
 };
 
-export const parseServerError = error => {
+export const parseServerError = (error) => {
   if (error?.errMsg?.error_message) {
     return {
-      message: error?.errMsg?.error_message
+      message: error?.errMsg?.error_message,
     };
   }
   if (typeof error?.errors?.message === 'string') {
@@ -51,7 +50,7 @@ export const parseServerError = error => {
   if (Array.isArray(error?.errors) && Array.isArray(error.errors[0])) {
     return {
       field: error.errors[0][0],
-      message: API_ERRORS[error.errors[0][1]]
+      message: API_ERRORS[error.errors[0][1]],
     };
   }
 };

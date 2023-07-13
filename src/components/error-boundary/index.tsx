@@ -2,9 +2,9 @@ import Alert from '@mui/material/Alert';
 import React from 'react';
 import Snackbar from '@mui/material/Snackbar';
 import { log } from '@/utils/logger.util';
-import { ErrorBoundaryProps, ErrorBoundaryState } from './error-boundary.type';
+import { ErrorBoundaryProps, ErrorBoundaryState } from './interface';
 
-export class ErrorBoundary extends React.Component<
+class ErrorBoundary extends React.Component<
   ErrorBoundaryProps,
   ErrorBoundaryState
 > {
@@ -39,3 +39,5 @@ export class ErrorBoundary extends React.Component<
     );
   }
 }
+
+export default ErrorBoundary;
