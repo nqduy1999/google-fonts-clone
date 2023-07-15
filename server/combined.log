@@ -1,0 +1,17 @@
+{"message":"Database connection failed with error Error: No connection options were found in any orm configuration files.","level":"info","timestamp":"2023-07-15T12:43:29.592Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:45:14.404Z"}
+{"message":"API getALLFonts Error TypeError: Cannot read property 'headers' of undefined","level":"info","timestamp":"2023-07-15T12:45:14.404Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:49:39.928Z"}
+{"message":"API getALLFonts Error TypeError: Cannot read property 'headers' of undefined","level":"info","timestamp":"2023-07-15T12:49:39.928Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:49:57.491Z"}
+{"message":"API getALLFonts Error TypeError: Cannot read property 'headers' of undefined","level":"info","timestamp":"2023-07-15T12:49:57.491Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:50:27.733Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:51:31.649Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:51:52.412Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:52:14.454Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:52:17.230Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:52:29.711Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:52:45.281Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:53:01.176Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:53:05.932Z"}
+{"message":"Server running at 5555","level":"info","timestamp":"2023-07-15T12:53:34.408Z"}
