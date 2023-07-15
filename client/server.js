@@ -13,6 +13,7 @@ app.get('*', function (req, res) {
   res.sendFile(path.join(DIST_DIR, 'index.html'));
 });
 
+
 function listen(port) {
   app.portNumber = port;
   app

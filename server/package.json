@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --collectCoverage",
     "prebuild": "rimraf dist/",
-    "build": "tsc tsc-alias",
+    "build": "rimraf dist && tsc -p tsconfig.json",
     "start": "yarn serve",
     "serve": "node dist/index.js",
     "watch-node": "nodemon tsc-alias",
@@ -72,16 +72,16 @@
     "winston": "^3.2.1"
   },
   "_moduleAliases": {
-    "~/config": "src/config",
-    "~/constants": "src/constants",
-    "~/controllers": "src/controllers",
-    "~/entities": "src/entities",
-    "~/libs": "src/libs",
-    "~/middlewares": "src/middlewares",
-    "~/models": "src/models",
-    "~/routes": "src/routes",
-    "~/services": "src/services",
-    "~/types": "src/types",
-    "~/utilities": "src/utilities"
+    "~/config": "dist/config",
+    "~/constants": "dist/constants",
+    "~/controllers": "dist/controllers",
+    "~/entities": "dist/entities",
+    "~/libs": "dist/libs",
+    "~/middlewares": "dist/middlewares",
+    "~/models": "dist/models",
+    "~/routes": "dist/routes",
+    "~/services": "dist/services",
+    "~/types": "dist/types",
+    "~/utilities": "dist/utilities"
   }
 }

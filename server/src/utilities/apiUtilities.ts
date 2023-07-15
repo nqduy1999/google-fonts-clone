@@ -2,9 +2,7 @@ import { Request } from 'express';
 
 import IRequest from '~/types/IRequest';
 
-const extractUserIdFromRequest = (req: IRequest) => {
-  return req.user && req.user.user_id;
-};
+const extractUserIdFromRequest = (req: IRequest) => {};
 
 const extractQueryForRequest = (req: Request, query: string) => {
   if (req.query[query]) {
@@ -15,8 +13,6 @@ const extractQueryForRequest = (req: Request, query: string) => {
 };
 
 const extractCookieFromRequest = (req: Request, key: string) => {
-  console.log(req.headers.authorization, 'authorization');
-
   if (req.headers.authorization) {
     return req.headers.authorization as string;
   }
